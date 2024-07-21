@@ -1,12 +1,66 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --accent-color: #ff0070;
+  --color-for-shadow: #ff0070;
+  --main-font: "IBM Plex mono";
+  --title-color: #000028;
+  --text-color: #f1b2ce;
+  --main-color-for-title: #db00ff;
+  --background-color: #000028;
+  --hover: rgba(255, 0, 112, 0.4);
+  --color-for-focus: #ff0070;
+  --color-for-button: #ff0070;
+  --section-title: #ff0070;
+  --color-for-decor-items: #ff0070;
+  --background-image-url: url("../images/cover-image-dark.png");
+  --border-for-link: #f1b2ce;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: #ff0070;
+    --color-for-shadow: #ff0070;
+    --main-font: "IBM Plex mono";
+    --title-color: #000028;
+    --text-color: #f1b2ce;
+    --main-color-for-title: #db00ff;
+    --background-color: #000028;
+    --hover: rgba(255, 0, 112, 0.4);
+    --color-for-focus: #ff0070;
+    --color-for-button: #ff0070;
+    --section-title: #ff0070;
+    --color-for-decor-items: #ff0070;
+    --background-image-url: url("../images/cover-image-dark.png");
+    --border-for-link: #f1b2ce;
+  }
+
+  .decorated-item {
+    display: inline;
+  }
+  
+  .decorated-item__text::after {
+    display: inline-block;
+  }
+}
+
+.page.theme_dark .decorated-item__text::after {
+  display: inline-block;
+}
+
+.page.theme_dark .decorated-item {
+  position: absolute;
+  top: 10px;
+  right: -9px;
+  align-items: center;
+  display: inline-block;
+}
+
+.page.theme_dark .decorated-item__text {
+  display: flex;
+}
+
+@media (min-width: 767px) {
+  .page.theme_dark .decorated-item {
+    top: 20px;
+    right: 0;
+  }
 }
